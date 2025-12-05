@@ -1,104 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
+
 body {
+    font-family: "Tajawal", sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    background: #ffd54f;
-    font-family: "Tajawal", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     text-align: center;
-    transition: background 0.2s ease-in-out;
+    direction: rtl;
+    transition: background-color 0.2s;
 }
 
-/* شاشة البداية */
-#start-screen {
-    padding: 40px;
-}
-
-#start-screen h1 {
-    font-size: 40px;
-}
-
-#start-screen .desc {
-    font-size: 20px;
-    margin: 20px 0;
-}
-
-input {
-    width: 80%;
-    padding: 12px;
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-button {
-    padding: 12px 25px;
-    font-size: 22px;
-    background: #333;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #555;
-}
-
-/* شاشة الاختبار */
-#test-container {
-    margin-top: 30px;
-}
-
-#card {
+#start-screen, #instruction-screen, #end-screen {
     background: white;
-    width: 340px;
-    margin: 0 auto;
     padding: 40px;
-    border-radius: 25px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+#test-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* الشريط العلوي */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 700px;
+    background: rgba(0,0,0,0.4);
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#timer {
+    color: #ffeb3b; /* لون أصفر للعداد ليكون بارزاً */
+    font-size: 20px;
+}
+
+/* تنسيق نص التعليمات */
+.instructions-text {
+    text-align: right;
+    font-size: 18px;
+    line-height: 1.8;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+}
+
+#word-box {
+    background-color: white;
+    padding: 40px 80px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    min-width: 200px;
 }
 
 #word {
-    font-size: 70px;
-    font-weight: bold;
+    font-size: 80px;
+    font-weight: 900;
+    color: #222;
+    margin: 0;
 }
 
-#info-bar {
-    margin-top: 25px;
-    font-size: 26px;
-    display: flex;
-    justify-content: space-around;
-}
-
-#color-buttons {
-    margin-top: 60px;
+#buttons {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
 .btn {
-    width: 70px;
-    height: 70px;
-    border-radius: 18px;
-    border: 3px solid white;
+    width: 80px;
+    height: 80px;
+    border: 5px solid white;
+    border-radius: 15px;
     cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: transform 0.1s;
 }
 
-.btn[data-color="أحمر"] { background: #ff3b30; }
-.btn[data-color="أزرق"] { background: #007aff; }
-.btn[data-color="أخضر"] { background: #4cd964; }
-.btn[data-color="أصفر"] { background: #ffeb3b; }
-.btn[data-color="برتقالي"] { background: #ff9500; }
+.btn:hover { transform: scale(1.1); }
+.btn:active { transform: scale(0.9); }
 
-/* شاشة النهاية */
-#end-screen {
-    padding: 40px;
+.main-btn, .retry-btn {
+    padding: 12px 30px;
+    font-size: 18px;
+    background: #007aff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Tajawal";
+    margin-top: 20px;
 }
 
-#end-screen h2 {
-    font-size: 38px;
+input {
+    padding: 10px;
+    width: 70%;
+    font-size: 18px;
+    font-family: "Tajawal";
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
 
-#end-screen p {
-    font-size: 22px;
-    margin: 10px;
+.info-box {
+    background: #eef;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: right;
+    font-size: 14px;
 }
